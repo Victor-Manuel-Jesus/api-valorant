@@ -1,0 +1,89 @@
+/* LOADING */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: 1s all;
+    opacity: 0;
+}
+.loading.show {
+    opacity: 1;
+}
+.loading .spin {
+    border: 3px solid hsla(185, 100%, 62%, 0.2);
+    border-top-color: #3cefff;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* CARD FLIP */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    padding:0 0 10px 0;
+    margin-bottom: 35px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: justify;
+    padding: 10px 0 0 0;
+}
+.card-title {
+    width: 120px;
+    background: rgb(240,232,232);
+    background: linear-gradient(90deg, rgba(240,232,232,1) 49%, rgba(226,12,12,1) 100%);
+    border-radius: 7px;
+    border: 3px groove #000000;
+}
+.panel-title{
+    border-bottom:1px solid black ;
+    margin-bottom: 20px;
+}
+
+/* CARRUSEL */
+.imagen-carrusel {
+    background-color: black;
+}
